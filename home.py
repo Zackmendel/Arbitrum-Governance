@@ -38,6 +38,7 @@ st.markdown("""
 # -------------------------------------------------------------------------------------------------------------------------------------
 
 with st.sidebar:
+  st.image("https://cryptoast.fr/wp-content/uploads/2023/03/airdrop-arbitrum-enfin-la-projet-devoile-dao-dans-meme-temps.jpg")
   st.header("Navigation:")
   st.markdown("""
   - [Introduction](#introduction)
@@ -58,7 +59,8 @@ with st.sidebar:
   - [CONCLUSION](#conclusion)
   """)
 
-st.markdown(f'<h1 style="background-image:url(https://imageio.forbes.com/specials-images/imageserve/5f6e5a2d793c5299630c7bf3/0x0.jpg?format=jpg&height=900&width=1600&fit=bounds);font-weight:bold;font-family:Georgia;font-size:30px;text-align:center;text-shadow: 5px 5px black;color:#f23a7d;box-shadow: 3px 3px black;">{"Arbitrum Governance Participation Analysis."}</h1>', unsafe_allow_html=True)
+st.markdown(f'<h1 style="background-image:url(https://www.tbstat.com/wp/uploads/2023/03/20230315_Arbitrum_airdrop-1200x675.jpg?isSafari=false&isMobile=true);font-weight:bold;font-family:Georgia;font-size:50px;text-align:center;text-shadow: 5px 5px black;color:#FFFFFF;box-shadow: 3px 3px black;">{"Arbitrum Governance Participation Analysis."}</h1>', unsafe_allow_html=True)
+# st.markdown(f'<h1 style="background-image:url(https://www.tbstat.com/wp/uploads/2023/03/20230315_Arbitrum_airdrop-1200x675.jpg?isSafari=false&isMobile=true);font-weight:bold;font-family:Georgia;font-size:30px;text-align:center;text-shadow: 5px 5px black;color:#f23a7d;box-shadow: 3px 3px black;">{"Arbitrum Governance Participation Analysis."}</h1>', unsafe_allow_html=True)
 
 # -------------------------------------------------------------------------------------------------------------------------------------
 
@@ -112,8 +114,9 @@ st.markdown(f'<h1 style="background-image:url(https://imageio.forbes.com/special
 
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-
-st.header("INTRODUCTION")
+cola, colb, colc = st.columns(3, gap='large')   #st.columns([1,3,1])
+with colb:
+  st.header(":blue[INTRODUCTION]")
 
 st.markdown("""
 ## **Arbitrum** 
@@ -152,9 +155,12 @@ with st.expander("See Overall Proposal Id Stats SQL"):
 # with st.expander("See Overall Proposal Id Stats SQL"):
 
 
-st.markdown("""
-### Differences Between Tally, Karma and Snapshot
+cola, colb, colc = st.columns([0.5,3,0.5]) #st.columns(3, gap='large')   #st.columns([1,3,1])
+with colb:
+  st.header(":blue[Differences Between Tally, Karma and Snapshot]")
 
+
+st.markdown("""
 Let's quickly explore the differences between **Tally**, **Karma**, and **Snapshot** as governance participation platforms for the **Arbitrum network**:
 
 1. **Tally**:
@@ -194,9 +200,12 @@ Let's quickly explore the differences between **Tally**, **Karma**, and **Snapsh
 In summary, **Tally** provides on-chain voting, **Karma** focuses on gasless off-chain voting, and **Snapshot** combines off-chain voting with decentralized storage. Choose the platform that aligns best with your project's goals and user preferences. 🗳️✨
 """)
 
-st.markdown("""
-## Overview
+cola, colb, colc = st.columns(3, gap='large')   #st.columns([1,3,1])
+with colb:
+  st.header(":blue[Overview]")
 
+
+st.markdown("""
 This dashboard provides an analysis of on-chain governance participation rate, which is a measure of how active and engaged the token holders are in the decision-making process of a decentralized organization (DAO). The dashboard aims to achieve the following goals:
 
 - Increase participation rates in on-chain voting of Arbitrum DAO.
@@ -214,9 +223,11 @@ The dashboard uses data from [flipsidecrypto](flipsidecrypto.xyz) as the major s
 
 # ------------------------------------------------------------------------------------------------------------------------------------------
 
-st.markdown("""
+st.markdown(f'<h1 style="background-image:url(https://www.tbstat.com/wp/uploads/2023/03/20230315_Arbitrum_airdrop-1200x675.jpg?isSafari=false&isMobile=true);font-weight:bold;font-family:Georgia;font-size:30px;text-align:center;text-shadow: 5px 5px black;color:#f23a7d;box-shadow: 3px 3px black;">{"1. ON-CHAIN PROPOSAL AND VOTING STATS OF ARBITRUM GOVERNANCE(Compared To Karma and Tally)."}</h1>', unsafe_allow_html=True)
+
+# st.markdown("""
 ## :red[1. ON-CHAIN PROPOSAL AND VOTING STATS OF ARBITRUM GOVERNANCE(Compared To Karma and Tally)]
-""")
+# """)
 
 
 # ------------------------------------------------------------------------------------------------------------------------------------------------
@@ -519,9 +530,11 @@ While trying to find out which categories of users take part more often in votin
 
 # ------------------------------------------------------------------------------------------------------------------------------------------
 
-st.markdown("""
-## :red[2. SNAPSHOT PROPOSAL AND VOTING STATS OF ARBITRUM GOVERNANCE]
-""")
+st.markdown(f'<h1 style="background-image:url(https://www.tbstat.com/wp/uploads/2023/03/20230315_Arbitrum_airdrop-1200x675.jpg?isSafari=false&isMobile=true);font-weight:bold;font-family:Georgia;font-size:30px;text-align:center;text-shadow: 5px 5px black;color:#f23a7d;box-shadow: 3px 3px black;">{"2. SNAPSHOT PROPOSAL AND VOTING STATS OF ARBITRUM GOVERNANCE."}</h1>', unsafe_allow_html=True)
+
+# st.markdown("""
+# ## :red[2. SNAPSHOT PROPOSAL AND VOTING STATS OF ARBITRUM GOVERNANCE]
+# """)
 
 
 # ------------------------------------------------------------------------------------------------------------------------------------------------
@@ -633,9 +646,12 @@ st.markdown("""
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # ------------------------------------------------------------------------------------------------------------------------------------------
 
-st.markdown("""
-## :red[3. Data Sources]
-""")
+st.markdown(f'<h1 style="background-image:url(https://www.tbstat.com/wp/uploads/2023/03/20230315_Arbitrum_airdrop-1200x675.jpg?isSafari=false&isMobile=true);font-weight:bold;font-family:Georgia;font-size:50px;text-align:center;text-shadow: 5px 5px black;color:#f23a7d;box-shadow: 3px 3px black;">{"3. Data Sources."}</h1>', unsafe_allow_html=True)
+
+
+# st.markdown("""
+# ## :red[3. Data Sources]
+# """)
 
 
 # --------------------------------------------------------------------------------
@@ -890,9 +906,21 @@ LIMIT 1000
 
 # --------------------------------------------------------------------------------------------------------------------------------------
 
-st.markdown("""
-## REFERENCES
+st.markdown(f'<h1 style="background-image:url(https://www.tbstat.com/wp/uploads/2023/03/20230315_Arbitrum_airdrop-1200x675.jpg?isSafari=false&isMobile=true);font-weight:bold;font-family:Georgia;font-size:50px;text-align:center;text-shadow: 5px 5px black;color:#f23a7d;box-shadow: 3px 3px black;">{"4. CONCLUSIONS."}</h1>', unsafe_allow_html=True)
 
+st.markdown("""
+- In conclusion, the analysis into Arbitrum governance has provided valuable insights into the dynamics of onchain voting and the distribution of governance power within the ecosystem. With 29 proposals put forth by 9 unique proposers, the governance process has seen active participation, albeit with some notable trends.
+- One striking observation is the disparity between the total circulating ARBs and the amount available for voting, which stands at just 12%. This limited pool for decision-making underscores the need for broader participation and engagement in governance processes.
+- The distribution of voters reveals interesting patterns, with a significant portion favoring proposals while others either voted against or abstained. However, the concentration of voting power among a few delegates, primarily supported by larger delegations from whales, raises concerns about centralization within the governance structure.
+- Furthermore, the dominance of certain users, such as 0xfrisson, in proposal submissions highlights potential areas for diversification and inclusivity within the governance framework.
+- Examining user behavior, it becomes evident that while there is a considerable number of repeat voters, overall commitment to Arbitrum governance appears relatively low, with many participants engaging sporadically and for short durations. Bridging and dex users emerge as prominent voters, raising questions about their motivations and broader participation across different chains.
+- The contrast between onchain and offchain voting patterns suggests that platforms like Snapshot are gaining traction, possibly due to their convenience and accessibility, attracting a more diverse range of participants.
+- In moving forward, addressing centralization concerns, enhancing voter engagement, and promoting inclusivity should be key priorities for strengthening the integrity and effectiveness of Arbitrum governance. Moreover, continued analysis and monitoring of voting behaviors will be essential for guiding future improvements and ensuring a more robust and representative governance ecosystem.
+""")
+
+st.markdown(f'<h1 style="background-image:url(https://www.tbstat.com/wp/uploads/2023/03/20230315_Arbitrum_airdrop-1200x675.jpg?isSafari=false&isMobile=true);font-weight:bold;font-family:Georgia;font-size:50px;text-align:center;text-shadow: 5px 5px black;color:#f23a7d;box-shadow: 3px 3px black;">{"5. REFERENCES."}</h1>', unsafe_allow_html=True)
+
+st.markdown("""
 1. [For decentralized governance on Ethereum, why is Snapshot considered ....]( https://ethereum.stackexchange.com/questions/127331/for-decentralized-governance-on-ethereum-why-is-snapshot-considered-off-chain.)
 2. [Snapshot Polls | Tally Docs.]( https://docs.tally.xyz/education/governance-frameworks/snapshot-polls.)
 3. [What's the difference between Tally vs Snapshot? : r/dao - Reddit.]( https://www.reddit.com/r/dao/comments/sbjbpn/whats_the_difference_between_tally_vs_snapshot/.)
@@ -903,4 +931,3 @@ st.markdown("""
 8. [Top Project Management Dashboard Examples & Templates - datapine.]( https://www.datapine.com/blog/project-management-dashboards-examples-and-templates/.)
 9. [Voting Power on ARB Foundation](https://flipsidecrypto.xyz/panda/arbitrum-voting-power-on-arb-foundation-MpnxHx?tabIndex=4)
 """)
-
