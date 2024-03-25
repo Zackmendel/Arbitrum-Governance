@@ -39,9 +39,14 @@ st.markdown("""
 
 with st.sidebar:
   st.header("Navigation:")
-  st.markdown("""
-  - [Introduction](#wsj-s-crypto-terrorism-claims-under-scrutiny-after-on-chain-analysis)
-  - [Sam's Findings Using Flipsidecrypto Data](#sam-s-findings-using-flipsidecrypto-data)
+    st.markdown("""
+  - [Introduction](https://arbitrum-governance.streamlit.app/~/+/#introduction)
+    - [Arbitrum](https://arbitrum-governance.streamlit.app/~/+/#arbitrum)
+    - [Arbitrum Governance](https://arbitrum-governance.streamlit.app/~/+/#arbitrum-governance)
+    - [Importance of Governance](https://arbitrum-governance.streamlit.app/~/+/#importance-of-governance)
+    - [Community Participation](https://arbitrum-governance.streamlit.app/~/+/#community-participation)
+    - [Differences Between Tally, Karma and Snapshot](https://arbitrum-governance.streamlit.app/~/+/#Differences-Between-Tally,-Karma-and-Snapshot)
+  - [Overview](https://arbitrum-governance.streamlit.app/~/+/#overview)
     - [Elliptic's Methdology](#elliptic-s-methdology)
     - [BitOK's Methodology](#bitok-s-methdology)
   - [THE REALITY](#the-reality)
