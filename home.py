@@ -885,19 +885,12 @@ LIMIT 1000
 st.markdown("""
 ## REFERENCES
 
-(1) For decentralized governance on Ethereum, why is Snapshot considered .... https://ethereum.stackexchange.com/questions/127331/for-decentralized-governance-on-ethereum-why-is-snapshot-considered-off-chain.
-(2) Snapshot Polls | Tally Docs. https://docs.tally.xyz/education/governance-frameworks/snapshot-polls.
-(3) What's the difference between Tally vs Snapshot? : r/dao - Reddit. https://www.reddit.com/r/dao/comments/sbjbpn/whats_the_difference_between_tally_vs_snapshot/.
-(4) Tally - Run DAOs onchain. https://www.tally.xyz/.
-(5) undefined. https://ethereum.stackexchange.com/a/127351.
-(6) Use Snipping Tool to capture screenshots - Microsoft Support. https://support.microsoft.com/en-us/windows/use-snipping-tool-to-capture-screenshots-00246869-1843-655f-f220-97299b865f6b.
-(7) Lightshot — screenshot tool for Mac & Win. https://app.prntscr.com/.
-(8) Snipaste - 截图 + 贴图. https://zh.snipaste.com/.
-(9) Download Now - TallyPrime 4.1, TallyPrime Server & Developer. https://tallysolutions.com/download/.
-(10) TallyPrime 4.1 | Best Business Software for SMBs in India. https://tallysolutions.com/.
-(11) Download Accounting Software, Download ERP Software | Tally.ERP 9.com. https://www.tally.erp9.com/downloads.html.
-(12) Data Exchange Between Branches | Synchronisation & Snapshot Exchange. https://help.tallysolutions.com/tally-prime/data-exchange-tally-prime/data-synchronisation-tally/.
-(1) On-chain Governance Proposals: Engaging with Your Token Holders. https://www.unvest.io/blog/on-chain-governance-proposals-engaging-with-your-token-holders.
-(2) [FINAL] OP Governance Analytics Dashboard - ARCHIVED Mission Proposals .... https://gov.optimism.io/t/final-op-governance-analytics-dashboard/6171?page=2.
-(3) Top Project Management Dashboard Examples & Templates - datapine. https://www.datapine.com/blog/project-management-dashboards-examples-and-templates/.
+(1) [For decentralized governance on Ethereum, why is Snapshot considered ....]( https://ethereum.stackexchange.com/questions/127331/for-decentralized-governance-on-ethereum-why-is-snapshot-considered-off-chain.)
+(2) [Snapshot Polls | Tally Docs.]( https://docs.tally.xyz/education/governance-frameworks/snapshot-polls.)
+(3) [What's the difference between Tally vs Snapshot? : r/dao - Reddit.]( https://www.reddit.com/r/dao/comments/sbjbpn/whats_the_difference_between_tally_vs_snapshot/.)
+(4) [Tally - Run DAOs onchain.]( https://www.tally.xyz/.)
+(12) [Data Exchange Between Branches | Synchronisation & Snapshot Exchange.]( https://help.tallysolutions.com/tally-prime/data-exchange-tally-prime/data-synchronisation-tally/.)
+(1) [On-chain Governance Proposals: Engaging with Your Token Holders.]( https://www.unvest.io/blog/on-chain-governance-proposals-engaging-with-your-token-holders.)
+(2) [FINAL OP Governance Analytics Dashboard - ARCHIVED Mission Proposals ....]( https://gov.optimism.io/t/final-op-governance-analytics-dashboard/6171?page=2.)
+(3) [Top Project Management Dashboard Examples & Templates - datapine.]( https://www.datapine.com/blog/project-management-dashboards-examples-and-templates/.)
 """)
