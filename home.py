@@ -39,7 +39,7 @@ st.markdown("""
 
 with st.sidebar:
   st.header("Navigation:")
-  st.  st.markdown("""
+  st.markdown("""
   - [Introduction](https://arbitrum-governance.streamlit.app/~/+/#introduction)
     - [Arbitrum](https://arbitrum-governance.streamlit.app/~/+/#arbitrum)
     - [Arbitrum Governance](https://arbitrum-governance.streamlit.app/~/+/#arbitrum-governance)
