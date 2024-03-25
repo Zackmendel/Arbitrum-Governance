@@ -40,20 +40,21 @@ st.markdown("""
 with st.sidebar:
   st.header("Navigation:")
   st.markdown("""
-  - [Introduction](https://arbitrum-governance.streamlit.app/~/+/#introduction)
-    - [Arbitrum](https://arbitrum-governance.streamlit.app/~/+/#arbitrum)
-    - [Arbitrum Governance](https://arbitrum-governance.streamlit.app/~/+/#arbitrum-governance)
+  - [Introduction](#introduction)
+    - [Arbitrum](#arbitrum)
+    - [Arbitrum Governance](#arbitrum-governance)
     - [Importance of Governance](#importance-of-governance)
     - [Community Participation](#community-participation)
-    - [Differences Between Tally, Karma and Snapshot](#Differences-Between-Tally,-Karma-and-Snapshot)
+    - [Differences Between Tally, Karma and Snapshot](#differences-between-tally-karma-and-snapshot)
   - [Overview](#overview)
-    - [Elliptic's Methdology](#elliptic-s-methdology)
-    - [Elliptic's Methdology](#elliptic-s-methdology)
-    - [BitOK's Methodology](#bitok-s-methdology)
-  - [THE REALITY](#the-reality)
-    - [Crypto Aid Israel](#crypto-aid-israel)
-    - [UkraineDAO](#ukrainedao)
-    - [Top High Impact Crypto Based Humanitarian Projects](#top-high-impact-crypto-based-humanitarian-projects)
+  - [1. ON-CHAIN PROPOSAL AND VOTING STATS OF ARBITRUM GOVERNANCE(Compared To Karma and Tally)](#1-on-chain-proposal-and-voting-stats-of-arbitrum-governance-compared-to-karma-and-tally)
+    - [Who publishes proposals most often](#Who-publishes-proposals-most-often)
+  - [Which categories of users take part more often.](#Which-categories-of-users-take-part-more-often)
+  - [2. SNAPSHOT PROPOSAL AND VOTING STATS OF ARBITRUM GOVERNANCE](#2-snapshot-proposal-and-voting-stats-of-arbitrum-governance)
+    - [Which categories of users take part more often](#which-categories-of-users-take-part-more-often)
+  - [3. Data Sources](#data-sources)
+      - [Onchain](#onchain)
+      - [Snapshot](#snapshot)
   - [CONCLUSION](#conclusion)
   """)
 
@@ -138,6 +139,21 @@ This is a **Layer 2 scaling solution** for Ethereum. It aims to enhance scalabil
   - Choose the platform that best suits your preferences and project goals.
 
 Remember, **Arbitrum governance** empowers the community to shape the network's future.
+""")
+
+
+st.warning('Please go through the information in the expander below for a deeper understanding of the data used for this analysis.', icon="⚠️")
+with st.expander("See Overall Proposal Id Stats SQL"):
+  st.markdown("""
+  - On-chain data about holders and ARB balance of holders were made based on the net transfers per wallet. This has a problem of not properly capturing users who has locked their tokens in a contract and does not directly hold the token in their wallet. For cases of accuracy, data from Arbiscan.io is used. This does not affect the delegates and voting power of delegates.
+  - Snapshot uses a snapshot of token balances to get the voting power of voters and delegates, so values from that of the on-chain analysis applies to it also.
+
+  """)
+# with st.expander("See Overall Proposal Id Stats SQL"):
+
+
+st.markdown("""
+### Differences Between Tally, Karma and Snapshot
 
 Let's quickly explore the differences between **Tally**, **Karma**, and **Snapshot** as governance participation platforms for the **Arbitrum network**:
 
@@ -151,7 +167,6 @@ Let's quickly explore the differences between **Tally**, **Karma**, and **Snapsh
     - **Use Case**:
         - Ideal for projects that prioritize **fully decentralized and transparent voting**.
         - Suitable for users who are comfortable with paying gas fees.
-    - **Source**: ¹².
 
 2. **Karma**:
     - **Type**: **Off-chain** governance tool.
@@ -164,7 +179,6 @@ Let's quickly explore the differences between **Tally**, **Karma**, and **Snapsh
     - **Use Case**:
         - Useful for projects aiming to **minimize transaction fees** for users.
         - Often adopted alongside an **on-chain voting system** for proposal ratification.
-    - **Source**: ¹.
 
 3. **Snapshot**:
     - **Type**: **Off-chain** governance tool.
@@ -176,7 +190,6 @@ Let's quickly explore the differences between **Tally**, **Karma**, and **Snapsh
         - Used by various projects, including **Yearn Finance** and **Sushiswap**.
     - **Use Case**:
         - Suitable for projects seeking a balance between **cost-effective voting** and **transparency**.
-    - **Source**: ¹.
 
 In summary, **Tally** provides on-chain voting, **Karma** focuses on gasless off-chain voting, and **Snapshot** combines off-chain voting with decentralized storage. Choose the platform that aligns best with your project's goals and user preferences. 🗳️✨
 """)
@@ -309,14 +322,14 @@ with col_2:
 
 st.markdown("""
 ### COMMENTS
-- TOTAL HOLDERS: this is the number of holders that was gotten from the ARB token contract [page](https://arbiscan.io/token/0x912ce59144191c1204e64559fe8253a0e49e6548).
-- NON-VOTERS: This is a subtraction of the total voters and the number of wallets that has ever voted onchain.
--NON-VOTING HOLDERS: These are holders based onchain balance that have not participated in onchain governance. These are the largest set of the grouping next to the total holder and non-voters. This is actually not a good number.
-- HOLDERS(bal>0): are defined as users with more than zero balance in their wallets. It is important to note that these are not the exact values of individual holders but an estimated number from onchain data, delegator and delegate ARBs are locked 🔒 in a contract and does not reflect as balance in their wallets. But these are still the largest of all the holders distribution stats.
-- DELEGATES: These are wallets that tokens has been delegated to for voting.
-- GHOST DELEGATES: These are delegates that has received delegations but has never participated in any onchain voting. This makes a very high percentage(62%) of the delegates on the ARB governance.
--VOTERS: These are wallets that has participated in voting activities on the Arbitrum governance.
-- NON-DELEGATE VOTERS: This constitutes a small portion of voters that are not delegates but are participating in Arbitrum governance.
+- **TOTAL HOLDERS:** This represents the number of holders obtained from the ARB token contract [page](https://arbiscan.io/token/0x912ce59144191c1204e64559fe8253a0e49e6548).
+- **NON-VOTERS:** This figure is obtained by subtracting the total number of voters from the total number of wallets that have ever voted on-chain.
+- **NON-VOTING HOLDERS:** These are holders with a balance based on on-chain data who have not participated in on-chain governance. This group comprises the largest subset after total holders and non-voters. This figure indicates a concerning lack of engagement.
+- **HOLDERS (bal > 0):** These are users with a balance greater than zero in their wallets. It's important to note that these values are estimates derived from on-chain data. Delegator and delegate ARBs are locked in a contract and do not reflect as a balance in their wallets. Nonetheless, this category constitutes the largest subset among all holder distribution statistics.
+- **DELEGATES:** These are wallets to which tokens have been delegated for voting purposes.
+- **GHOST DELEGATES:** These are delegates who have received delegations but have never participated in any on-chain voting. They represent a significant proportion (62%) of the delegates in the ARB governance.
+- **VOTERS:** These are wallets that have engaged in voting activities on the Arbitrum governance platform.
+- **NON-DELEGATE VOTERS:** This refers to a small portion of voters who are not delegates but are actively participating in Arbitrum governance.
 """)
   # -----------------------------------------------------------------------------------------------------------------------
 
@@ -380,16 +393,12 @@ st.plotly_chart(fig_3a, use_container_width=True)
 
 st.markdown("""
 ### COMMENTS
+- SQL credits for this chart go to [PANDA](https://flipsidecrypto.xyz/panda/dashboards), a data analyst at Flipside Crypto, for their work on [Voting Power on ARB Foundation](https://flipsidecrypto.xyz/panda/arbitrum-voting-power-on-arb-foundation-MpnxHx?tabIndex=4).
 
-SQL credits for this chart goes to [PANDA](), a flipsidecrypto fata analyst on his work on [Arbitrum Governance]().
-
-This distribution was strategically placed based on the amount of ARBs delegated and the number of delegators, the findings are quite insightful.
-
-Based on the ARBs delegated, a lot of delegates (top 50 to be precise) received a very high amount of delegations greater than 1000ARBs and this constitutes a majority of the ARB delegated to them.
-
-What offsets the above finding os that, based on users delegating, most wallets delegated less than 100ARBs to the delegates.
-
-This means that, majority of the voting power of most of these delegates came from a few selected whales. This looks like a centralization issue.
+- This distribution was strategically organized based on the amount of ARBs delegated and the number of delegators, yielding insightful findings.
+- Regarding the ARBs delegated, a significant number of delegates (specifically the top 50) received substantial delegations exceeding 1000 ARBs, constituting the majority of the ARBs delegated to them.
+- An offsetting factor to the above finding is that, based on users delegating, most wallets delegated less than 100 ARBs to the delegates.
+- This suggests that the majority of the voting power of these delegates originated from a select few whales, indicating a potential centralization issue.
 """)
 
 
@@ -453,7 +462,7 @@ with col_1:
 with col_2:
   fig_2b = px.pie(csvg, names="PROPOSER_SHORT", values="PROPOSALS",
              color='PROPOSER_SHORT', title="Who Publishes Proposals Most Often",
-             height=500)
+             height=400)
   fig_2b.update_layout(hovermode="x unified")
   fig_2b.update_traces(textposition='inside', textinfo='percent+label')
   st.plotly_chart(fig_2b, use_container_width=True)
@@ -540,6 +549,13 @@ with col_3:
 with col_4:
   st.metric(label="Abstain", value=(millify(csva["ABSTAIN"][0], precision=2)))
 
+st.markdown("""
+### COMMENTS
+- On Snapshot, a total of 6.96k proposals proposed by 5.8k unique proposers has been voted upon on the Arbitrum governance. COmparing this value to that of Tally and Karma, it is seen that a lot more users engage more with snapshot.
+- A total of approximately 4.93million votes has been made by 279.3k voters out of which a significant portion (3.05mill) voted in favor of the proposals while a smaller number voted against and some abstained from picking a choice.
+- Daily votes on Arbitrum Governance is seen to have peaked on Oct 7th 2023. The growth of voters participation is seen to be seriously high in recent days indicationg more interest of the users to participate on governance activities, this is a very good sign.
+""")
+
 # ----------------------------------------------------------------------------------------------------
 
 csvk = pd.read_csv("csv_data/Daily_Snapshot_Proposal_Id_Overview.csv")
@@ -569,7 +585,7 @@ with col_3:
 # --------------------------------------------------------------------------------------------------------------------------------------------------
 
 st.markdown("""
-### :blue[Who publishes proposals most often.]
+### :blue[Who publishes proposals most often(Snapshot)?]
 """)
 
 csvg = pd.read_csv("csv_data/Who_publishes_proposals_most_often_(Snapshot).csv")
@@ -586,47 +602,39 @@ with col_2:
   fig_2b.update_traces(textposition='inside', textinfo='percent+label')
   st.plotly_chart(fig_2b, use_container_width=True)
 
-# --------------------------------------------------------------------------------------------------------------------------
+# -------------------------------------------------------------------------------------------------------------------------------------------------
 
 st.markdown("""
-### :blue[Which categories of users take part more often.]
+### :blue[Which categories of users take part more often(Snapshot)?]
 """)
 
-csvh = pd.read_csv("csv_data/Which_categories_of_users_take_part_more_often.csv")
-csvi = pd.read_csv("csv_data/Voters_Participation_by_Votes.csv")
-csvj = pd.read_csv("csv_data/Voters_Participation_by_days.csv")
+csvi = pd.read_csv("csv_data/Voters_Participation_by_Votes(snapshot).csv")
+csvj = pd.read_csv("csv_data/Voters_Participation_by_days(snapshot).csv")
 
 col_1, col_2 = st.columns(2, gap='large')
 with col_1:
-  fig_2a = px.bar(csvh, x="USER_TYPE", y="VOTERS", title="Which categories of users take part more often(Voters Count)", height=500, color="USER_TYPE") 
-# log_y=True)
-  fig_2a.update_layout(hovermode="x unified")
-  st.plotly_chart(fig_2a, use_container_width=True)
-
-  fig_2a = px.bar(csvi, x="PARTICIPATION", y="VOTERS", title="Voters Participation by Votes", height=500, color="PARTICIPATION") 
+  fig_2a = px.bar(csvi, x="PARTICIPATION", y="VOTERS", title="Voters Participation by Votes(Snapshot)", height=500, color="PARTICIPATION") 
 # log_y=True)
   fig_2a.update_layout(hovermode="x unified")
   st.plotly_chart(fig_2a, use_container_width=True)
 
 with col_2:
-  fig_2a = px.bar(csvh, x="USER_TYPE", y="TXES", title="Which categories of users take part more often(Tx Count)", height=500, color="USER_TYPE") 
+  fig_2a = px.bar(csvj, x="PARTICIPATION", y="VOTERS", title="Voters Participation by Days(Snapshot)", height=500, color="PARTICIPATION") 
 # log_y=True)
   fig_2a.update_layout(hovermode="x unified")
   st.plotly_chart(fig_2a, use_container_width=True)
 
-  fig_2a = px.bar(csvj, x="PARTICIPATION", y="VOTERS", title="Voters Participation by Days", height=500, color="PARTICIPATION") 
-# log_y=True)
-  fig_2a.update_layout(hovermode="x unified")
-  st.plotly_chart(fig_2a, use_container_width=True)
-
-
+st.markdown("""
+### COMMENTS
+- Unlike the onchain stats, more voters are seen to be returnees with the most voters voting more than 10 times and spending more than five days in total in their voting history. This shows that a lot more users are involved in using Snapshot for voting. Probably cos of its convenience.
+""")
 
 
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # ------------------------------------------------------------------------------------------------------------------------------------------
 
 st.markdown("""
-## :red[1. ON-CHAIN STATS OF ARBITRUM GOVERNANCE(Compared To Karma and Tally)]
+## :red[3. Data Sources]
 """)
 
 
@@ -640,13 +648,13 @@ csv1 = pd.read_csv("csv_data/Overall_Proposal_Id_Stats.csv", on_bad_lines='skip'
 
 st.dataframe(csv1)
 
-fig_1 = px.bar(csv1, x="DATE_CREATED", y=["FOR", "AGAINST", "ABSTAIN"], title="Daily Marketcap of Arb Token", barmode='group', height=500) 
-# log_y=True)
-fig_1.update_layout(hovermode="x unified")
-# Add Scatter plot
-fig_1.add_scatter(x=csv1['DATE_CREATED'], y=csv1['TOTAL_VOTES'], name="Total Votes", line_color="red")
-# fig_1.add_scatter(x=csv4['timestamp'], y=csv4['circulating_supply'], name="Circulating Supply", line_color="red")
-st.plotly_chart(fig_1, use_container_width=True)
+# fig_1 = px.bar(csv1, x="DATE_CREATED", y=["FOR", "AGAINST", "ABSTAIN"], title="Daily Marketcap of Arb Token", barmode='group', height=500) 
+# # log_y=True)
+# fig_1.update_layout(hovermode="x unified")
+# # Add Scatter plot
+# fig_1.add_scatter(x=csv1['DATE_CREATED'], y=csv1['TOTAL_VOTES'], name="Total Votes", line_color="red")
+# # fig_1.add_scatter(x=csv4['timestamp'], y=csv4['circulating_supply'], name="Circulating Supply", line_color="red")
+# st.plotly_chart(fig_1, use_container_width=True)
 
 
 
@@ -885,12 +893,13 @@ LIMIT 1000
 st.markdown("""
 ## REFERENCES
 
-(1) [For decentralized governance on Ethereum, why is Snapshot considered ....]( https://ethereum.stackexchange.com/questions/127331/for-decentralized-governance-on-ethereum-why-is-snapshot-considered-off-chain.)
-(2) [Snapshot Polls | Tally Docs.]( https://docs.tally.xyz/education/governance-frameworks/snapshot-polls.)
-(3) [What's the difference between Tally vs Snapshot? : r/dao - Reddit.]( https://www.reddit.com/r/dao/comments/sbjbpn/whats_the_difference_between_tally_vs_snapshot/.)
-(4) [Tally - Run DAOs onchain.]( https://www.tally.xyz/.)
-(12) [Data Exchange Between Branches | Synchronisation & Snapshot Exchange.]( https://help.tallysolutions.com/tally-prime/data-exchange-tally-prime/data-synchronisation-tally/.)
-(1) [On-chain Governance Proposals: Engaging with Your Token Holders.]( https://www.unvest.io/blog/on-chain-governance-proposals-engaging-with-your-token-holders.)
-(2) [FINAL OP Governance Analytics Dashboard - ARCHIVED Mission Proposals ....]( https://gov.optimism.io/t/final-op-governance-analytics-dashboard/6171?page=2.)
-(3) [Top Project Management Dashboard Examples & Templates - datapine.]( https://www.datapine.com/blog/project-management-dashboards-examples-and-templates/.)
+1. [For decentralized governance on Ethereum, why is Snapshot considered ....]( https://ethereum.stackexchange.com/questions/127331/for-decentralized-governance-on-ethereum-why-is-snapshot-considered-off-chain.)
+2. [Snapshot Polls | Tally Docs.]( https://docs.tally.xyz/education/governance-frameworks/snapshot-polls.)
+3. [What's the difference between Tally vs Snapshot? : r/dao - Reddit.]( https://www.reddit.com/r/dao/comments/sbjbpn/whats_the_difference_between_tally_vs_snapshot/.)
+4. [Tally - Run DAOs onchain.]( https://www.tally.xyz/.)
+5. [Data Exchange Between Branches | Synchronisation & Snapshot Exchange.]( https://help.tallysolutions.com/tally-prime/data-exchange-tally-prime/data-synchronisation-tally/.)
+6. [On-chain Governance Proposals: Engaging with Your Token Holders.]( https://www.unvest.io/blog/on-chain-governance-proposals-engaging-with-your-token-holders.)
+7. [FINAL OP Governance Analytics Dashboard - ARCHIVED Mission Proposals ....]( https://gov.optimism.io/t/final-op-governance-analytics-dashboard/6171?page=2.)
+8. [Top Project Management Dashboard Examples & Templates - datapine.]( https://www.datapine.com/blog/project-management-dashboards-examples-and-templates/.)
+9. [Voting Power on ARB Foundation](https://flipsidecrypto.xyz/panda/arbitrum-voting-power-on-arb-foundation-MpnxHx?tabIndex=4)
 """)
