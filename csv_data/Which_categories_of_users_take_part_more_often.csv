@@ -1,0 +1,9 @@
+CATEGORY,USER_TYPE,VOTERS,TXES
+bridge,bridge user,127665,11579657
+dex,dex user,123271,4486196
+defi,defi user,120742,5916050
+dapp,dapp user,99144,1180251
+token,token user,98617,2082408
+nft,nft user,80348,1340800
+games,games user,51974,483905
+cex,cex user,76,354
