@@ -495,26 +495,28 @@ csvj = pd.read_csv("csv_data/Voters_Participation_by_days.csv")
 
 col_1, col_2 = st.columns(2, gap='large')
 with col_1:
-  fig_2a = px.bar(csvh, x="USER_TYPE", y="VOTERS", title="Which categories of users take part more often(Voters Count)", height=500, color="USER_TYPE") 
-# log_y=True)
-  fig_2a.update_layout(hovermode="x unified")
-  st.plotly_chart(fig_2a, use_container_width=True)
-
   fig_2a = px.bar(csvi, x="PARTICIPATION", y="VOTERS", title="Voters Participation by Votes", height=500, color="PARTICIPATION") 
 # log_y=True)
   fig_2a.update_layout(hovermode="x unified")
   st.plotly_chart(fig_2a, use_container_width=True)
 
+  fig_2a = px.bar(csvh, x="USER_TYPE", y="VOTERS", title="Which categories of users take part more often(Voters Count)", height=500, color="USER_TYPE") 
+# log_y=True)
+  fig_2a.update_layout(hovermode="x unified")
+  st.plotly_chart(fig_2a, use_container_width=True)
+
+
 with col_2:
+  fig_2a = px.bar(csvj, x="PARTICIPATION", y="VOTERS", title="Voters Participation by Days", height=500, color="PARTICIPATION") 
+# log_y=True)
+  fig_2a.update_layout(hovermode="x unified")
+  st.plotly_chart(fig_2a, use_container_width=True)
+
   fig_2a = px.bar(csvh, x="USER_TYPE", y="TXES", title="Which categories of users take part more often(Tx Count)", height=500, color="USER_TYPE") 
 # log_y=True)
   fig_2a.update_layout(hovermode="x unified")
   st.plotly_chart(fig_2a, use_container_width=True)
 
-  fig_2a = px.bar(csvj, x="PARTICIPATION", y="VOTERS", title="Voters Participation by Days", height=500, color="PARTICIPATION") 
-# log_y=True)
-  fig_2a.update_layout(hovermode="x unified")
-  st.plotly_chart(fig_2a, use_container_width=True)
 
 st.markdown("""
 ### COMMENTS
@@ -529,6 +531,59 @@ While trying to find out which categories of users take part more often in votin
 
 
 # ------------------------------------------------------------------------------------------------------------------------------------------
+
+st.markdown("""
+### :blue[Lets Explore The Bridgers Rabbit Hole🐇🕳.]
+""")
+
+csvk = pd.read_csv("csv_data/Bridging_on_Arbitrum.csv")
+csvl = pd.read_csv("csv_data/Top_10_Destination_Chains.csv")
+csvm = pd.read_csv("csv_data/Top_10_Tokens_Bridged_out.csv")
+csvn = pd.read_csv("csv_data/Are_Bridgers_Voters_on_Other_Chains.csv")
+
+col_1, col_2 = st.columns(2, gap='large')
+with col_1:
+  fig_2a = px.bar(csvk, x="BRIDGE_TYPE", y=["TXES", "VOTERS"], title="Bridging Out by Txes & Votes", height=500, color="BRIDGE_TYPE") 
+# log_y=True)
+  fig_2a.update_layout(hovermode="x unified")
+  st.plotly_chart(fig_2a, use_container_width=True)
+
+  fig_2a = px.bar(csvl, x="CHAIN", y="TXES", title="Top 10 Destination Chains", height=500, color="CHAIN") 
+# log_y=True)
+  fig_2a.update_layout(hovermode="x unified")
+  st.plotly_chart(fig_2a, use_container_width=True)
+
+  st.dataframe(csvn, use_container_width=True)
+
+
+with col_2:
+  fig_2a = px.bar(csvm, x="TOKEN", y="TXES", title="Top 10 Tokens Bridged out by Txes", height=500, color="TOKEN") 
+# log_y=True)
+  fig_2a.update_layout(hovermode="x unified")
+  st.plotly_chart(fig_2a, use_container_width=True)
+
+  fig_2a = px.bar(csvn, x="CHAINS", y="VOTERS", title="Are Bridgers Voters on Other Chains??", height=500, color="CHAINS") 
+# log_y=True)
+  fig_2a.update_layout(hovermode="x unified")
+  st.plotly_chart(fig_2a, use_container_width=True)
+  
+  fig_2a = px.bar(csvn, x="CHAINS", y="PERCENT", title="Percent Bridgers Voting on Other Chains", height=500, color="CHAINS") 
+# log_y=True)
+  fig_2a.update_layout(hovermode="x unified")
+  st.plotly_chart(fig_2a, use_container_width=True)
+
+
+st.markdown("""
+### COMMENTS
+Following up on our earlier findings about voters being bridgers on the Arbitrum chain, let us look at some key metrics to define their behavior.
+- The bridgers are seen to be bridging out of the Arbitrum chain more than bridging in, although the difference is on the lower side.
+- Stables (USDT, USDC...) are seen to be the top tokens bridged out alongside wrapped form of ETH. Stability is the oreder of the day.
+- Another important question was that, to which chain are they bridging to? We discovered that most voters bridged mostly to EVM compatible chains with Polygon and Optimism taking the lead in terms of transaction count.
+- To confirm if these voters are also involved in governance on other EVM compatible chains, we looked at voting on Snapshot and it was discovered that 70% of the voters has also participated in voting activities on the Etherem chain and a impressive percent in other EVM compatible chains.
+""")
+
+# ----------------------------------------------------------------------------------------------------------------------------------------------------------
+# ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 st.markdown(f'<h1 style="background-image:url(https://www.tbstat.com/wp/uploads/2023/03/20230315_Arbitrum_airdrop-1200x675.jpg?isSafari=false&isMobile=true);font-weight:bold;font-family:Georgia;font-size:30px;text-align:center;text-shadow: 5px 5px black;color:#f23a7d;box-shadow: 3px 3px black;">{"2. SNAPSHOT PROPOSAL AND VOTING STATS OF ARBITRUM GOVERNANCE."}</h1>', unsafe_allow_html=True)
 
@@ -639,6 +694,7 @@ with col_2:
 
 st.markdown("""
 ### COMMENTS
+- arbitrumfoundation.eth with address 0x1b686ee8e31c5959d9f5bbd8122a58682788eead is seen to be the top proposer for snapshot governance with 65 proposals, followed by bytedust.eth with 34 proposals.
 - Unlike the onchain stats, more voters are seen to be returnees with the most voters voting more than 10 times and spending more than five days in total in their voting history. This shows that a lot more users are involved in using Snapshot for voting. Probably cos of its convenience.
 """)
 
@@ -863,9 +919,13 @@ st.markdown("""
 ### :blue[Overall Proposal Id Stats for the first 1000 Proposals by Vote Count of Arbitrum on Snapshot.]
 """)
 
-csv3 = pd.read_csv("csv_data/Overall_Voters_Stats.csv", on_bad_lines='skip')
+csv3 = pd.read_csv("csv_data/Snapshot(base_query).csv", on_bad_lines='skip')
 
 st.dataframe(csv3)
+
+# url1 = pd.read_json("https://flipsidecrypto.xyz/api/v1/queries/db6b10f5-8031-4143-893d-6d6346be873f/data/latest")
+# st.dataframe(url1)
+
 
 
 
@@ -909,19 +969,23 @@ LIMIT 1000
 st.markdown(f'<h1 style="background-image:url(https://www.tbstat.com/wp/uploads/2023/03/20230315_Arbitrum_airdrop-1200x675.jpg?isSafari=false&isMobile=true);font-weight:bold;font-family:Georgia;font-size:50px;text-align:center;text-shadow: 5px 5px black;color:#f23a7d;box-shadow: 3px 3px black;">{"4. CONCLUSIONS."}</h1>', unsafe_allow_html=True)
 
 st.markdown("""
-- In conclusion, the analysis into Arbitrum governance has provided valuable insights into the dynamics of onchain voting and the distribution of governance power within the ecosystem. With 29 proposals put forth by 9 unique proposers, the governance process has seen active participation, albeit with some notable trends.
-- One striking observation is the disparity between the total circulating ARBs and the amount available for voting, which stands at just 12%. This limited pool for decision-making underscores the need for broader participation and engagement in governance processes.
-- The distribution of voters reveals interesting patterns, with a significant portion favoring proposals while others either voted against or abstained. However, the concentration of voting power among a few delegates, primarily supported by larger delegations from whales, raises concerns about centralization within the governance structure.
-- Furthermore, the dominance of certain users, such as 0xfrisson, in proposal submissions highlights potential areas for diversification and inclusivity within the governance framework.
-- Examining user behavior, it becomes evident that while there is a considerable number of repeat voters, overall commitment to Arbitrum governance appears relatively low, with many participants engaging sporadically and for short durations. Bridging and dex users emerge as prominent voters, raising questions about their motivations and broader participation across different chains.
-- The contrast between onchain and offchain voting patterns suggests that platforms like Snapshot are gaining traction, possibly due to their convenience and accessibility, attracting a more diverse range of participants.
-- In moving forward, addressing centralization concerns, enhancing voter engagement, and promoting inclusivity should be key priorities for strengthening the integrity and effectiveness of Arbitrum governance. Moreover, continued analysis and monitoring of voting behaviors will be essential for guiding future improvements and ensuring a more robust and representative governance ecosystem.
+#### In summary, the analysis of Arbitrum governance has illuminated several key aspects of its functioning and user behavior. With a total of 29 proposals put forward by 9 unique proposers, the governance ecosystem is witnessing active participation, albeit with some notable trends and challenges.
+- One significant observation is the limited proportion of ARBs available for voting, constituting only about 12% of the total circulating supply. This scarcity of voting power raises concerns about the inclusivity and representativeness of decision-making processes within the platform.
+- Moreover, the distribution of voting power reveals a concerning trend of centralization, with a few delegates receiving substantial delegations from larger holders, thereby concentrating significant influence in the hands of a select few.
+- Furthermore, the dominance of certain users, notably 0xfrisson, in proposal submissions underscores the need for diversification and broader participation within the governance framework to ensure a more inclusive and democratic decision-making process.
+- Analyzing user behavior, it becomes apparent that bridging and dex users are prominent participants in Arbitrum governance, with a majority bridging out to other EVM compatible chains, particularly Polygon and Optimism. Additionally, the significant overlap of voters participating in governance activities across multiple chains, notably Ethereum, suggests a broader engagement of the community in decentralized decision-making.
+-  Snapshot emerges as a prominent platform for decentralized decision-making within the Arbitrum community.
+- The comparison of engagement levels across different platforms like Tally and Karma highlights the popularity of Snapshot, with a significantly higher number of users actively participating in governance activities. This indicates a strong preference for Snapshot's interface and functionality among the Arbitrum community.
+- A noteworthy observation is the peak in daily votes on Arbitrum Governance, particularly on October 7th, 2023. This surge in participation suggests a growing interest and commitment among users towards actively shaping the direction of the ecosystem through governance processes. The increasing trend in voter participation in recent days is an encouraging sign, reflecting a maturing governance ecosystem and a vibrant community eager to contribute to decision-making.
+- Furthermore, the analysis identifies arbitrumfoundation.eth and bytedust.eth as the top proposers on Snapshot governance, with a significant number of proposals submitted. This underscores the diversity of voices and ideas being put forward within the governance framework, contributing to a dynamic and inclusive decision-making process.
+- The findings also reveal a notable shift in user behavior, with a higher proportion of return voters engaging multiple times and over extended periods. This trend suggests a growing familiarity and comfort with using Snapshot for voting, possibly driven by its user-friendly interface and convenience.
+- Looking ahead, addressing issues of centralization, enhancing voter engagement, and promoting inclusivity should be key priorities for the continued evolution and success of Arbitrum governance. By fostering a more diverse and participatory ecosystem, Arbitrum can strive towards achieving a more robust and decentralized governance model that truly represents the interests of its community.
 """)
 
 st.markdown(f'<h1 style="background-image:url(https://www.tbstat.com/wp/uploads/2023/03/20230315_Arbitrum_airdrop-1200x675.jpg?isSafari=false&isMobile=true);font-weight:bold;font-family:Georgia;font-size:50px;text-align:center;text-shadow: 5px 5px black;color:#f23a7d;box-shadow: 3px 3px black;">{"5. REFERENCES."}</h1>', unsafe_allow_html=True)
 
 st.markdown("""
-1. [For decentralized governance on Ethereum, why is Snapshot considered ....]( https://ethereum.stackexchange.com/questions/127331/for-decentralized-governance-on-ethereum-why-is-snapshot-considered-off-chain.)
+1. [Flipsidecrypto](flipsidecrypto.xyz)
 2. [Snapshot Polls | Tally Docs.]( https://docs.tally.xyz/education/governance-frameworks/snapshot-polls.)
 3. [What's the difference between Tally vs Snapshot? : r/dao - Reddit.]( https://www.reddit.com/r/dao/comments/sbjbpn/whats_the_difference_between_tally_vs_snapshot/.)
 4. [Tally - Run DAOs onchain.]( https://www.tally.xyz/.)
@@ -930,5 +994,11 @@ st.markdown("""
 7. [FINAL OP Governance Analytics Dashboard - ARCHIVED Mission Proposals ....]( https://gov.optimism.io/t/final-op-governance-analytics-dashboard/6171?page=2.)
 8. [Top Project Management Dashboard Examples & Templates - datapine.]( https://www.datapine.com/blog/project-management-dashboards-examples-and-templates/.)
 9. [Voting Power on ARB Foundation](https://flipsidecrypto.xyz/panda/arbitrum-voting-power-on-arb-foundation-MpnxHx?tabIndex=4)
+10. [Coinmarketcap](https://coinmarketcap.com/currencies/arbitrum/)
+11. [Arbitrum Foundation Docs](https://docs.arbitrum.foundation/deployment-addresses)
+12. [Arbitrum Karma](https://arbitrum.karmahq.xyz/)
+13. [Gitcoin Beta Round Data Analysis](https://dspyt.com/gitcoinbetaroundanalysis)
+14. [For decentralized governance on Ethereum, why is Snapshot considered ....]( https://ethereum.stackexchange.com/questions/127331/for-decentralized-governance-on-ethereum-why-is-snapshot-considered-off-chain.)
+15. [ARB Token Supply](https://docs.arbitrum.foundation/token-supply)
+16. [Governance Voting and Staking Metrics on NEAR & Solana & Osmosis](https://flipsidecrypto.xyz/Sbhn_NP/governance-voting-and-staking-metrics-on-near-solana-osmosis-6BEdEA?tabIndex=2)
 """)
-
