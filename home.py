@@ -223,6 +223,8 @@ The dashboard covers the following aspects of on-chain governance participation:
 The dashboard uses data from [flipsidecrypto](flipsidecrypto.xyz) as the major source and compared to [Karma](karma.xyz) and [Tally](tally.xyz) for on-chain data, and [Snapshot](snapshot.org) for off-chain data, to provide a comprehensive and comparative view of on-chain governance participation across different DAOs.
 """)
 
+st.warning('You can go through the metrics dashboard showing all the charts and querries used for this analysis on Flipsidecrypto [HERE](https://flipsidecrypto.xyz/zackmendel/arbitrum-governance-EcsQcv).', icon="💡")
+
 # ------------------------------------------------------------------------------------------------------------------------------------------
 
 st.markdown(f'<h1 style="background-image:url(https://www.tbstat.com/wp/uploads/2023/03/20230315_Arbitrum_airdrop-1200x675.jpg?isSafari=false&isMobile=true);font-weight:bold;font-family:Georgia;font-size:30px;text-align:center;text-shadow: 5px 5px black;color:#f23a7d;box-shadow: 3px 3px black;">{"1. ON-CHAIN PROPOSAL AND VOTING STATS OF ARBITRUM GOVERNANCE(Compared To Karma and Tally)."}</h1>', unsafe_allow_html=True)
